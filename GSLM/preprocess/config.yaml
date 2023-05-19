@@ -1,0 +1,30 @@
+######################
+# Config description #
+######################
+
+# * download_models: whether to download the pretrained models (recommended)
+# * download_model_dir: the directory to store the pretrained models
+
+# To manually set the model paths, remember to set download_models to False.
+# Priority: download_models > ssl_model_path, km_model_path
+# * ssl_model_path: manually setting the path to the pretrained speech SSL model.
+# * km_model_path: manually setting the path to the k-means model.
+
+# The output path of the processed data is "[output_dir]/[dataset_name]"
+# * output_dir: the directory to store the processed data
+
+##########
+#  GSLM  #
+##########
+"GSLM":
+  fairseqrc:
+    LM_datatype: src-only
+    feature_type: hubert
+    download_models: True
+    download_model_dir: [path]/storage/GSLM/pretrained_models/
+    ssl_model_path: [path]/storage/GSLM/pretrained_models/HuBERT/hubert_base_ls960.pt
+    km_model_path: [path]/storage/GSLM/pretrained_models/HuBERT/km.bin
+    layer: 6
+
+  datarc:
+    output_dir: [path]/storage/GSLM/s2u_data

@@ -1,0 +1,12 @@
+name: "SD_mustard"
+taskrc:
+  merge: True
+  no_overlap: True
+datarc:
+  root_path: /home/itk0123/s2u/mustard/utterances_final_wav
+  output_path: /home/itk0123/s2u_preprocessed/mustard
+  json_path: /home/itk0123/s2u/mustard/sarcasm_data.json
+  k_fold: 0
+  speaker_dependent: True
+  batch_size: 32
+  num_workers: 2

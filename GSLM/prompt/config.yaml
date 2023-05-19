@@ -1,0 +1,42 @@
+storage_dir: [path]/storage/GSLM
+
+prompt_param_filter:
+  - "sep"
+  - "prompt"
+  - "verbalizer"
+
+task_num_classes:
+  SCR_speech_commands: 12
+  SCR_lt_speech_commands: 15
+  SCR_dm_speech_commands: 19
+  SCR_ar_speech_commands: 16
+  SCR_grabo: 36
+  IC_fluent_commands: 24
+  LID_voxforge: 6
+  FSD_asvspoof: 2
+  AcC_accentdb: 9
+  GID_voxceleb1: 2
+  SID_voxceleb1: 1251
+  VAD_freesound: 2
+  AuC_esc50: 50
+  DYC_easycall: 6
+  SD_mustard: 2
+  SD_mustardpp: 2
+
+task_batch_size:
+  SCR_speech_commands: 32
+  SCR_lt_speech_commands: 1
+  SCR_dm_speech_commands: 1
+  SCR_ar_speech_commands: 1
+  SCR_grabo: 4
+  IC_fluent_commands: 32
+  LID_voxforge: 16
+  FSD_asvspoof: 32
+  AcC_accentdb: 32
+  GID_voxceleb1: 32
+  SID_voxceleb1: 32
+  VAD_freesound: 64
+  AuC_esc50: 4
+  DYC_easycall: 32
+  SD_mustard: 32
+  SD_mustardpp: 32

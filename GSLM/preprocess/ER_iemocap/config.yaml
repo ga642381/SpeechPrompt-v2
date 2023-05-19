@@ -1,0 +1,9 @@
+name: "ER_iemocap"
+datarc:
+  root_path: /home/yukai/s2u/IEMOCAP
+  output_path: /home/yukai/s2u_preprocessed/emotion
+  test_fold: Session1
+  pre_load: True
+  batch_size: 16
+  num_workers: 8
+  valid_ratio: 0.2

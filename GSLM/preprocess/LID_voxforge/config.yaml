@@ -1,0 +1,8 @@
+name: "LID_voxforge"
+taskrc:
+  merge: True
+datarc:
+  root_path: /home/yukai/s2u/voxforge
+  output_path: /home/yukai/s2u_preprocessed/voxforge
+  batch_size: 16
+  num_workers: 8

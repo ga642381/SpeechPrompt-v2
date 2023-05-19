@@ -1,0 +1,9 @@
+name: "DYC_easycall"
+taskrc:
+  merge: True
+  no_overlap: True
+datarc:
+  root_path: /home/ycj0123/s2u_files/EasyCall_sr16k
+  output_path: /home/ycj0123/s2u_files/easycall_preprocess
+  batch_size: 32
+  num_workers: 2

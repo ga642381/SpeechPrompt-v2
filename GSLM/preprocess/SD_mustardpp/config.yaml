@@ -1,0 +1,10 @@
+name: "SD_mustardpp"
+taskrc:
+  merge: True
+  no_overlap: True
+datarc:
+  root_path: /home/ycj0123/s2u_files/mustardpp_raw/final_utterance_videos/
+  output_path: /home/ycj0123/s2u_files/mustardpp
+  csv_path: /home/ycj0123/s2u_files/mustardpp_raw/mustard++_text.csv
+  batch_size: 32
+  num_workers: 2

@@ -1,0 +1,10 @@
+name: "SCR_dm_speech_commands"
+taskrc:
+  merge: True
+datarc:
+  root_path: /home/yukai/s2u/dysarthria_zh_command
+  data_path: /home/yukai/s2u/SpeechAdvReprogram/Datasets/DM-SCR
+  output_path: /home/yukai/s2u_preprocessed/dm_speech_commands
+  dev_size: 0.2
+  batch_size: 16
+  num_workers: 8

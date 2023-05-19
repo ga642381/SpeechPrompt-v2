@@ -1,0 +1,9 @@
+name: "IC_fluent_commands"
+taskrc:
+  merge: True
+  no_overlap: True
+datarc:
+  root_path: /home/itk0123/s2u/fluent_commands
+  output_path: /home/itk0123/s2u_preprocessed/fluent_commands
+  batch_size: 16
+  num_workers: 12

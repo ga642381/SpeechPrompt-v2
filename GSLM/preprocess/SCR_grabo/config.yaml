@@ -1,0 +1,8 @@
+name: "SCR_grabo"
+taskrc:
+  merge: True
+datarc:
+  root_path: /home/yukai/s2u/grabo
+  output_path: /home/yukai/s2u_preprocessed/grabo
+  batch_size: 16
+  num_workers: 8
