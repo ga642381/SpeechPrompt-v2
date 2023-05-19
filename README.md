@@ -2,10 +2,9 @@
 
 ![](https://ga642381.github.io/SpeechPrompt/SpeechPrompt-v2-assets/SpeechPrompt-v2-12tasks-framework.png)
 
-- GitHub: https://github.com/ga642381/SpeechPrompt-dev
 - Website: https://ga642381.github.io/SpeechPrompt/
-- Pipeline Charts: [place holder]
-- Datasets: [place holder]
+- Pipeline Charts: https://github.com/ga642381/SpeechPrompt-v2/blob/main/docs/pipeline.png
+- Datasets Doc: https://github.com/ga642381/SpeechPrompt-v2/blob/main/docs/dataset.md
 
 ## :elephant: Pre-trained models and files
 
