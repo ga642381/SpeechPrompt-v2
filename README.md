@@ -20,8 +20,7 @@ These models can be automatically downloaded when running preprocessing pipeline
 ## :wrench: Preprocessing
 
 ### Concept
-
-![](https://i.imgur.com/keY07YP.png)
+<img src="https://i.imgur.com/keY07YP.png">
 
 - There are 4 steps in the data preprocess (Speech2unit) pipline. The main task here is to perform speech-to-units and collating the task labels
 
@@ -55,54 +54,67 @@ These models can be automatically downloaded when running preprocessing pipeline
 ## :arrows_counterclockwise: Verbalizer
 
 ### Concept
-
-![](https://i.imgur.com/FUs9uTE.png =x150)
+<img src="https://i.imgur.com/FUs9uTE.png" height=250>
 
 - There are 2 steps in Verbalizer, which maps the task labels into language model's vocabulary.
 
 ### Steps
-
-```shell
-python verbalizer.py --downstream SCR_google_speech_commands --action all --method freq
-```
+* run verbalizer.py
+* example:
+    ```shell
+    python verbalizer.py --downstream SCR_google_speech_commands --action all --method freq
+    ```
 
 ## :fish: Fairseq Preprocess
 
 ### Concept
-
-![](https://i.imgur.com/WRH8evd.png =x100)
+<img src="https://i.imgur.com/WRH8evd.png" height="150">
 
 This step converts the verbalized data to binary files that will be used for fairseq training.
 
 ### Steps
-
-```shell
-python fairseq_preprocess.py --downstream SCR_google_speech_commands --vb_method freq
-```
+* run fairseq_preprocess.py
+* example:
+    ```shell
+    python fairseq_preprocess.py --downstream SCR_google_speech_commands --vb_method freq
+    ```
 
 ## :fire: Training
-
-![](https://i.imgur.com/r1H08Kl.png =x150)
+### Concept
+<img src="https://i.imgur.com/r1H08Kl.png" height="200">
 
 - During training, 2 kinds of checkpoints will be saved
   - base_model
   - prompt
-  -
 
+### steps
+* run train.py
+* example:
+    ```shell
+    python train.py \
+        --downstream SCR_google_speech_commands \
+        --vb_method freq \
+        --exp_name SCR_google_speech_commands_plen.5 \
+        --prompt_length 5 \
+        --deep_prompt
+    ```
 ## :black_nib: Sampling
 
 ### Concept
+<img src="https://i.imgur.com/yP0ECAS.png" height="200">
 
-![](https://i.imgur.com/yP0ECAS.png =x150)
+* Load base_model and prompts to perform sampling
 
 ### Steps
+* run sample.py
+* example:
+    ```shell
 
-```shell
-python sample.py \
-    --exp_name SCR_lt_speech_commands_plen.5 \
-    --downstream SCR_lt_speech_commands \
-    --vb_method freq
-```
+    python sample.py \
+        --exp_name SCR_google_speech_commands_plen.5 \
+        --downstream SCR_google_speech_commands \
+        --vb_method freq
+    ```
 
 - The output is a json file containing the file_name, source units, ground truth (label), and model prediction:
   ![](https://hackmd.io/_uploads/S1sAWiVBn.png)
