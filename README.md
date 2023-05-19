@@ -3,6 +3,7 @@
 ![](https://ga642381.github.io/SpeechPrompt/SpeechPrompt-v2-assets/SpeechPrompt-v2-12tasks-framework.png)
 
 - Website: https://ga642381.github.io/SpeechPrompt/
+- Paper Link: https://arxiv.org/abs/2303.00733
 - Pipeline Charts: https://github.com/ga642381/SpeechPrompt-v2/blob/main/docs/pipeline.png
 - Datasets Doc: https://github.com/ga642381/SpeechPrompt-v2/blob/main/docs/dataset.md
 
