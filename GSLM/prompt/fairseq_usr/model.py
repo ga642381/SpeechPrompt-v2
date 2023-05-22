@@ -15,7 +15,7 @@ from fairseq.modules.checkpoint_activations import checkpoint_wrapper
 from fairseq.modules.quant_noise import quant_noise as apply_quant_noise_
 from fairseq.utils import safe_getattr, safe_hasattr
 
-from prompt_GSLM.transformer_prompt_decoder import TransformerDecoderPrompt
+from .transformer_prompt_decoder import TransformerDecoderPrompt
 
 # from fairseq_usr.transformer import TransformerDecoderPrompt
 from torch import Tensor
