@@ -79,7 +79,7 @@ dependencies:
   - nest-asyncio=1.5.1=pyhd3eb1b0_0
   - nettle=3.7.3=hbbd107a_1
   - notebook=6.4.5=py39h06a4308_0
-  - numpy-base=1.22.2
+  - numpy=1.24.3
   - olefile=0.46=pyhd3eb1b0_0
   - openh264=2.1.0=hd408876_0
   - openssl=1.1.1l=h7f98852_0

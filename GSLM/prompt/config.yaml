@@ -6,7 +6,7 @@ prompt_param_filter:
   - "verbalizer"
 
 task_num_classes:
-  SCR_speech_commands: 12
+  SCR_google_speech_commands: 12
   SCR_lt_speech_commands: 15
   SCR_dm_speech_commands: 19
   SCR_ar_speech_commands: 16
@@ -24,7 +24,7 @@ task_num_classes:
   SD_mustardpp: 2
 
 task_batch_size:
-  SCR_speech_commands: 32
+  SCR_google_speech_commands: 32
   SCR_lt_speech_commands: 1
   SCR_dm_speech_commands: 1
   SCR_ar_speech_commands: 1
