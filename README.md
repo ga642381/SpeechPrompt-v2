@@ -41,7 +41,7 @@ These models can be automatically downloaded when running preprocessing pipeline
    - option 1
    ```shell
    # You can run --action all to run through all the 4 stages:
-   python runner.py --model GSLM --downstream SCR_google_speech_commands --action
+   python runner.py --model GSLM --downstream SCR_google_speech_commands --action all
    ```
    - option 2
    ```shell
