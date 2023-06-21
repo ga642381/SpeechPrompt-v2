@@ -47,7 +47,7 @@ def convert_to_fairseq_args(args):
     ]
 
     sampling_args = [
-        "--user-dir=./prompt_GSLM",
+        "--user-dir=./fairseq_usr",
         "--task=language_modeling",
         "--sampling",
         "--sampling-topk=1",

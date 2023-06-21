@@ -54,7 +54,7 @@ def convert_to_fairseq_args(args):
     ]
 
     task_args = [
-        "--user-dir=./prompt_GSLM",
+        "--user-dir=./fairseq_usr",
         "--task=prompt_language_modeling",
         "--arch=GSLM_SpeechPrompt_v1",
         "--criterion=cross_entropy_prompt",
