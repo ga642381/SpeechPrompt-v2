@@ -129,3 +129,43 @@
 - Download raw videos from https://drive.google.com/drive/folders/1kUdT2yU7ERJ5KdauObTj5oQsBlSrvTlW
 - Download `mustard++_text.csv` from https://raw.githubusercontent.com/cfiltnlp/MUStARD_Plus_Plus/main/mustard%2B%2B_text.csv and put it in the same directory as the raw videos
 - Convert videos in `final_utterances_videos` to audio with `/GSLM/preprocess/mustard/convert2audio.py`
+
+### :books: Voice Activity Detection (VAD)
+Follow the download instructions from [NVIDIA Nemo](https://docs.nvidia.com/deeplearning/nemo/user-guide/docs/en/stable/asr/speech_classification/datasets.html#speech-command-freesound-for-vad)
+* Download [NeMo's Github repo](https://github.com/NVIDIA/NeMo)
+* Go to **<NeMo_git_root>/scripts/freesound_download_resample/** and follow the below steps to download [Freesound](https://freesound.org/) (These steps are originated from [freesound_download.py](https://github.com/NVIDIA/NeMo/blob/main/scripts/freesound_download_resample/freesound_download.py))
+    * Install required packages
+		```
+		pip install -r freesound_requirements.txt
+		```
+    * Create an API key for freesound.org at https://freesound.org/help/developers/
+    * Create a python file called **freesound_private_apikey.py** and add lined 
+	```
+	api_key = <your Freesound api key> 
+	client_id = <your Freesound client id>
+	```
+    * Authorize by run ```python freesound_download.py --authorize ``` and visit the website and paste response code
+    * Feel free to change any arguments in download_resample_freesound.sh such as max_samples and max_filesize
+    * Run bash download_resample_freesound.sh <numbers of files you want> <download data directory> <resampled data directory>. 
+        ```
+        bash download_resample_freesound.sh 4000 ./freesound ./freesound_resampled_background
+        ```
+* Download Google Speech Commands Dataset v2 
+    * http://download.tensorflow.org/data/speech_commands_v0.02.tar.gz
+    * http://download.tensorflow.org/data/speech_commands_test_set_v0.02.tar.gz
+    * Download and unpack Speech Commands
+        ```
+        mkdir -p ./speech_commands_v0.02
+        tar zxf speech_commands_v0.02.tar.gz -C ./speech_commands_v0.02
+        ```
+    * Download and unpack Speech Commands test set
+        ```
+        mkdir -p ./speech_commands_test_set_v0.02
+        tar zxf speech_commands_test_set_v0.02.tar.gz -C ./speech_commands_test_set_v0.02
+        ```
+* Process Google SC v2 & Freesound dataset
+    * Modify line 484 in <NeMo_git_root>/scripts/dataset_processing/process_vad_data.py to fixed_test, fixed_val, fixed_train = 60000, 20000, 160000 and run the following command:
+        ```
+        python <NeMo_git_root>/scripts/dataset_processing/process_vad_data.py --out_dir='./manifest/' --speech_data_root='./speech_commands_v0.02'--background_data_root='./freesound_resampled_background' --log --rebalance_method='fixed'
+        ```
+
