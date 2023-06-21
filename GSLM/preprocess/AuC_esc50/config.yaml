@@ -1,0 +1,9 @@
+name: "AuC_esc50"
+taskrc:
+  merge: True
+datarc:
+  root_path: /storage/SpeechPrompt/datasets/ESC-50-master
+  valid_ratio: 0.2
+  test_fold: 1
+  batch_size: 16
+  num_workers: 8

@@ -1,0 +1,7 @@
+name: "VAD_freesound"
+taskrc:
+  merge: True
+datarc:
+  root_path: /storage/SpeechPrompt/datasets/freesound
+  batch_size: 16
+  num_workers: 8
