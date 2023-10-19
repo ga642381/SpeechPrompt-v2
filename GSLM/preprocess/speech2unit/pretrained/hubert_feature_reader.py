@@ -30,14 +30,30 @@ class HubertFeatureReader:
         self.max_chunk = max_chunk
 
     def read_audio(self, path, offset=None, duration=None, ref_len=None):
-        if offset == None and duration == None:
-            wav, sr = sf.read(path)
+        """
+        Read an audio file and return its waveform.
+
+        Args:
+            path (str): Path to the audio file.
+            offset (float): Starting time offset for reading audio.
+            duration (float): Duration of audio to read.
+            ref_len (int): Reference length for the audio.
+
+        Returns:
+            numpy.ndarray: Audio waveform as a NumPy array.
+        """
+
+        # Important! Force load mono and at 16 kHz
+        assert self.task.cfg.sample_rate == 16000
+        if offset is None and duration is None:
+            wav, sr = librosa.load(path, mono=True, sr=self.task.cfg.sample_rate)
         else:
-            # for freesound preprocessing
-            wav, sr = librosa.load(path, offset=float(offset), duration=float(duration), sr=self.task.cfg.sample_rate)
-        if wav.ndim == 2:
-            wav = wav.mean(-1)
-        assert wav.ndim == 1, wav.ndim
+            # Handle 'None' as a string and convert it to actual None
+            duration = None if duration == "None" else float(duration)
+            wav, sr = librosa.load(path, offset=offset, duration=duration, mono=True, sr=self.task.cfg.sample_rate)
+
+        assert sr == self.task.cfg.sample_rate == 16000, sr
+
         if ref_len is not None and abs(ref_len - len(wav)) > 160:
             print(f"ref {ref_len} != read {len(wav)} ({path})")
         return wav
