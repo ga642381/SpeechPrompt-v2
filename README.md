@@ -7,6 +7,15 @@
 - Pipeline Charts: https://github.com/ga642381/SpeechPrompt-v2/blob/main/docs/pipeline.png
 - Datasets Doc: https://github.com/ga642381/SpeechPrompt-v2/blob/main/docs/dataset.md
 
+## Update Reminder:
+1. Sampling Rate for Downstream Task:
+- When performing prompting on the downstream task, ensure that the sampling rate of the audios is 16kHz.
+- Modification: There is a recent commit to force librosa to load the audio in 16kHz.
+2. Pre-trained Model Loading:
+- Make sure the pre-trained model is loaded correctly for reasonable results with prompting.
+- Observation: When loading the pre-trained model correctly, the training epoch for prompts should start at epoch 46, not epoch 1. This is because the pre-trained GSLM is already trained for 45 epochs.
+
+
 ## :elephant: Pre-trained models and files
 
 There are 4 files you will be having:
